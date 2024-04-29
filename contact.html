@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portofolioku! | Contact Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./contact.css">
+    </script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navLink navbar-expand-lg navbar-dark p-md-3 fixed-top" id="myNav">
+        <div class="container-fluid" id="navbar">
+            <a style="font-weight: 800; font-size: 30px;"
+                class="navbar-brand collapse caveat navbar-collapse d-flex justify-content-center"
+                id="brand">Portofolioku! <i class="fa fa-solid fa-paper-plane" style="margin-left: 0.5em;"></i></a>
+            <a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html" id="navLink">Home</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html"
+                                style="  text-transform: uppercase; margin-right: 1rem; font-weight: 700; font-size: 14px; background-color: #00000000; letter-spacing: 3px;">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" id="navLink">Contact Me</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./skill.html" id="navLink">Skill</a>
+                        </li>
+                        <li class="nav-item">
+                            <label class="theme-switch">
+                                <input type="checkbox" class="theme-switch__checkbox">
+                                <div class="theme-switch__container position-absolute top-50 translate-middle"
+                                    style="right: 3em;" id="themeSwitch" onclick="Darkmode()">
+                                    <div class="theme-switch__clouds"></div>
+                                    <div class="theme-switch__stars-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
+                                        </svg>
+                                    </div>
+                                    <div class="theme-switch__circle-container">
+                                        <div class="theme-switch__sun-moon-container">
+                                            <div class="theme-switch__moon">
+                                                <div class="theme-switch__spot"></div>
+                                                <div class="theme-switch__spot"></div>
+                                                <div class="theme-switch__spot"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Form -->
+    <section id="jumbotron">
+        <div class="overlay"></div>
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col"></div>
+                <div class="page-heading">
+                    <h1 class="text-center text-white" style="font-size: 40px;" id="Welcome-text">Apa ada yang perlu
+                        ditanyakan?</h1>
+                    <p class="text-center text-white" style="font-size: 20px;">Jika ada, kamu bisa tuliskan apa yang
+                        ingin kamu
+                        tanyakan dibawah ya!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container col-7">
+        <div class="row form-group">
+            <section id="thisform" class="container justify-content-center">
+                <h1 style="margin-bottom: 1.1em;">Isi sesuai format dibawah ya agar saya dapat membalas pesan anda lewat
+                    alamat email yang anda sertakan disini!</h1>
+                <form id="myForm">
+                    <div>
+                        <label for="name" class="form-label">Nama</label>
+                        <input type="text" class="form-control justify-content-center" id="name" required />
+                    </div>
+                    <div>
+                        <label for="email" class="form-label">Alamat Email</label>
+                        <input type="email" class="form-control" id="email" required />
+                    </div>
+                    <div>
+                        <label for="phone" class="form-label">Nomor Telepon</label>
+                        <input type="number" class="form-control" id="phone" required />
+                    </div>
+                    <div>
+                        <label for="question" class="form-label">Pertanyaan</label>
+                        <textarea class="form-control" id="question" rows="3" style="margin-bottom:10px;"
+                            required></textarea>
+                    </div>
+                    <div>
+                        <label class="checkbox-container">
+                            <input class="custom-checkbox" checked="" type="checkbox" required>
+                            <span class="checkmark"></span>Ingat saya
+                        </label>
+                    </div>
+                    <button type="button, submit" onclick="return validateForm()">Kirim!</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <!-- End Form -->
+
+    <!-- popup thankyou -->
+    <div class="container">
+        <div id="popup" class="popup">
+            <div class="popup-background"></div>
+            <div class="popup-content-box">
+                <h2><i style="font-size: 35px;" class="far fa-check-circle"></i> Terkirim!</h2>
+                <p>Terima kasih telah mengirimkan pertanyaan!</p>
+                <a href="./home.html" style="text-decoration: none; color: #cf8e00;" class="button">Kembali ke Halaman
+                    Utama</a>
+            </div>
+        </div>
+    </div>
+    <!-- end popup thankyou -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- footer -->
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://web.facebook.com/chyaa.a30/">
+                                <span class="fa-stack fa-lg icon-color">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-brands fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/chyaa30">
+                                <span class="fa-stack fa-lg icon-color">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://wa.me/08969961650">
+                                <span class="fa-stack fa-lg icon-color">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-brands fa-whatsapp fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://open.spotify.com/user/31aj6fsikw22y7vgne3egzmkmwq4?si=0e0baec7dc944e98">
+                                <span class="fa-stack fa-lg icon-color">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-brands fa-spotify fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://discord.com/invite/t35ajJzh">
+                                <span class="fa-stack fa-lg icon-color">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-brands fa-discord fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-center" style="font-size: large;">
+                        Copyright &copy; Rivaldo | All right reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- any script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./contact.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        function redirectIfMobile() {
+            // Mendapatkan lebar layar
+            var screenWidth = window.innerWidth;
+
+            // Cek jika lebar layar kurang dari atau sama dengan 768px
+            if (screenWidth <= 1000) {
+                // Mengalihkan ke halaman mobile.html
+                window.location.href = './mobile.html';
+            }
+        }
+
+        // Memanggil fungsi saat dokumen dimuat
+        window.onload = redirectIfMobile;
+    </script>
+    <!-- any script -->
+</body>
+
+</html>
