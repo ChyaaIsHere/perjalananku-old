@@ -37,18 +37,16 @@
   var loadingScreen = document.getElementById('loading-screen');
   var content = document.querySelector('.hidden-content');
 
-  loadingScreen.style.opacity = '0'; // Start fade-out effect
+  loadingScreen.style.opacity = '0';
 
   setTimeout(function() {
-    loadingScreen.style.display = 'none'; // Hide loading screen after fade-out
-    content.style.display = 'block'; // Show content
-    document.body.style.overflow = 'auto'; // Enable scrolling
-  }, 500); // Match the timeout with CSS transition duration (0.5s)
+    loadingScreen.style.display = 'none'; 
+    content.style.display = 'block';
+    document.body.style.overflow = 'auto';
+  }, 500); 
 });
   </script>
   <style>
-/* Loading Screen */
-/* Loading Screen */
 #loading-screen {
   position: fixed;
   top: 0;
@@ -59,10 +57,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white; /* Anda bisa mengganti dengan warna background yang diinginkan */
-  z-index: 1000; /* Memastikan loading screen berada di atas elemen lainnya */
+  background-color: white;
+  z-index: 1000; 
   opacity: 1;
-  transition: opacity 0.5s ease; /* Transition for fade-out effect */
+  transition: opacity 0.5s ease;
 }
 
 .loader-animation {
@@ -75,48 +73,47 @@
 
 @keyframes load {
   0% {
-    box-shadow: inset -5cm -2.5cm 0 #0a7cbe;
+    box-shadow: inset -5cm -2.5cm 0 #eb8919;
   }
 
   25% {
-    box-shadow: inset 5cm -2.5cm 0 #0a7cbe;
+    box-shadow: inset 5cm -2.5cm 0 #eb8919;
   }
 
   25.01% {
-    box-shadow: inset 2.5cm -5cm 0 #0a7cbe;
+    box-shadow: inset 2.5cm -5cm 0 #eb8919;
   }
 
   50% {
-    box-shadow: inset 2.5cm 5cm 0 #0a7cbe;
+    box-shadow: inset 2.5cm 5cm 0 #eb8919;
   }
 
   50.01% {
-    box-shadow: inset 5cm 2.5cm 0 #0a7cbe;
+    box-shadow: inset 5cm 2.5cm 0 #eb8919;
   }
 
   75% {
-    box-shadow: inset -5cm 2.5cm 0 #0a7cbe;
+    box-shadow: inset -5cm 2.5cm 0 #eb8919;
   }
 
   75.01% {
-    box-shadow: inset -2.5cm 5cm 0 #0a7cbe;
+    box-shadow: inset -2.5cm 5cm 0 #eb8919;
   }
 
   100% {
-    box-shadow: inset -2.5cm -5cm 0 #0a7cbe;
+    box-shadow: inset -2.5cm -5cm 0 #eb8919;
   }
 }
 
-/* Loading text animation */
 .loader {
   display: flex;
   margin-top: 20px;
 }
 
 .l, .o, .a, .d, .i, .n, .g, .d1, .d2 {
-  color: black;
+  color: #eb8919;
   opacity: 0;
-  letter-spacing: 0.1em; /* Reduced letter spacing */
+  letter-spacing: 0.1em;
   text-shadow: 2px 2px 3px #919191;
   animation: pass 2s ease-in-out infinite;
 }
@@ -141,13 +138,12 @@
   50% { opacity: 0; }
 }
 
-/* Hide the content initially */
 .hidden-content {
   display: none;
 }
 
 body {
-  overflow: hidden; /* Prevent scrolling while loading screen is visible */
+  overflow: auto; 
 }
   </style>
 <!-- end loading -->
