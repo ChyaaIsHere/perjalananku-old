@@ -18,27 +18,37 @@
 
 <body style="overflow-x: hidden;">
 <!-- loading -->
-    <div id="loading-screen">
-    <div class="loader"></div>
-    <p class="loading-text">Please wait!</p>
+      <div id="loading-screen">
+    <div class="loader">
+      <span class="l">L</span>
+      <span class="o">o</span>
+      <span class="a">a</span>
+      <span class="d">d</span>
+      <span class="i">i</span>
+      <span class="n">n</span>
+      <span class="g">g</span>
+      <span class="d1">.</span>
+      <span class="d2">.</span>
+    </div>
   </div>
   <script>
-    window.addEventListener('load', function () {
-      var loadingScreen = document.getElementById('loading-screen');
-      var content = document.querySelector('.hidden-content');
+    window.addEventListener('load', function() {
+  var loadingScreen = document.getElementById('loading-screen');
+  var content = document.querySelector('.hidden-content');
 
-      loadingScreen.style.opacity = '0';
+  loadingScreen.style.opacity = '0'; // Start fade-out effect
 
-      setTimeout(function () {
-        loadingScreen.style.display = 'none';
-        content.style.display = 'block'; 
-        document.body.style.overflow = 'auto'; 
-      }, 500);
-    });
+  setTimeout(function() {
+    loadingScreen.style.display = 'none'; // Hide loading screen after fade-out
+    content.style.display = 'block'; // Show content
+    document.body.style.overflow = 'auto'; // Enable scrolling
+  }, 500); // Match the timeout with CSS transition duration (0.5s)
+});
   </script>
   <style>
+/* Loading Screen */
 #loading-screen {
-    position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -47,67 +57,51 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white; 
-  z-index: 1000;
+  background-color: white; /* Anda bisa mengganti dengan warna background yang diinginkan */
+  z-index: 1000; /* Memastikan loading screen berada di atas elemen lainnya */
   opacity: 1;
-  transition: opacity 0.5s ease; 
+  transition: opacity 0.5s ease; /* Transition for fade-out effect */
 }
 
 .loader {
-  height: 3cm;
-  width: 3cm;  
-  border-radius: 1rem;
-  box-shadow: inset 0 0 0 #0a7cbe;
-  animation: load 4s ease infinite;
+  display: flex;
 }
 
-.loading-text {
-  margin-top: 10px; 
-  font-size: 12px;
-    font-weight: 700; 
-  color: #eb8919;
+.l, .o, .a, .d, .i, .n, .g, .d1, .d2 {
+  color: black;
+  opacity: 0;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #919191;
+  animation: pass 2s ease-in-out infinite;
 }
 
-@keyframes load {
-  0% {
-    box-shadow: inset -3cm -1.5cm 0 #eb8919;
-  }
+.l { animation-delay: 0.2s; }
+.o { animation-delay: 0.4s; }
+.a { animation-delay: 0.6s; }
+.d { animation-delay: 0.8s; }
+.i { animation-delay: 1s; }
+.n { animation-delay: 1.2s; }
+.g { animation-delay: 1.4s; }
+.d1 { animation: pass1 2s ease-in-out infinite; animation-delay: 1.6s; }
+.d2 { animation: pass1 2s ease-in-out infinite; animation-delay: 2s; }
 
-  25% {
-    box-shadow: inset 3cm -1.5cm 0 #eb8919;
-  }
-
-  25.01% {
-    box-shadow: inset 1.5cm -3cm 0 #eb8919;
-  }
-
-  50% {
-    box-shadow: inset 1.5cm 3cm 0 #eb8919;
-  }
-
-  50.01% {
-    box-shadow: inset 3cm 1.5cm 0 #eb8919; 
-  }
-
-  75% {
-    box-shadow: inset -3cm 1.5cm 0 #eb8919; 
-  }
-
-  75.01% {
-    box-shadow: inset -1.5cm 3cm 0 #eb8919;
-  }
-
-  100% {
-    box-shadow: inset -1.5cm -3cm 0 #eb8919; 
-  }
+@keyframes pass {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
+@keyframes pass1 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hide the content initially */
 .hidden-content {
   display: none;
 }
 
 body {
-  overflow: auto; 
+  overflow: auto; /* Prevent scrolling while loading screen is visible */
 }
   </style>
 <!-- end loading -->
