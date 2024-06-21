@@ -18,7 +18,8 @@
 
 <body style="overflow-x: hidden;">
 <!-- loading -->
-      <div id="loading-screen">
+     <div id="loading-screen">
+    <div class="loader-animation"></div>
     <div class="loader">
       <span class="l">L</span>
       <span class="o">o</span>
@@ -47,6 +48,7 @@
   </script>
   <style>
 /* Loading Screen */
+/* Loading Screen */
 #loading-screen {
   position: fixed;
   top: 0;
@@ -63,14 +65,58 @@
   transition: opacity 0.5s ease; /* Transition for fade-out effect */
 }
 
+.loader-animation {
+  height: 5cm;
+  width: 5cm;
+  border-radius: 1rem;
+  box-shadow: inset 0 0 0 #0a7cbe;
+  animation: load 4s ease infinite;
+}
+
+@keyframes load {
+  0% {
+    box-shadow: inset -5cm -2.5cm 0 #0a7cbe;
+  }
+
+  25% {
+    box-shadow: inset 5cm -2.5cm 0 #0a7cbe;
+  }
+
+  25.01% {
+    box-shadow: inset 2.5cm -5cm 0 #0a7cbe;
+  }
+
+  50% {
+    box-shadow: inset 2.5cm 5cm 0 #0a7cbe;
+  }
+
+  50.01% {
+    box-shadow: inset 5cm 2.5cm 0 #0a7cbe;
+  }
+
+  75% {
+    box-shadow: inset -5cm 2.5cm 0 #0a7cbe;
+  }
+
+  75.01% {
+    box-shadow: inset -2.5cm 5cm 0 #0a7cbe;
+  }
+
+  100% {
+    box-shadow: inset -2.5cm -5cm 0 #0a7cbe;
+  }
+}
+
+/* Loading text animation */
 .loader {
   display: flex;
+  margin-top: 20px;
 }
 
 .l, .o, .a, .d, .i, .n, .g, .d1, .d2 {
   color: black;
   opacity: 0;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.1em; /* Reduced letter spacing */
   text-shadow: 2px 2px 3px #919191;
   animation: pass 2s ease-in-out infinite;
 }
@@ -101,7 +147,7 @@
 }
 
 body {
-  overflow: auto; /* Prevent scrolling while loading screen is visible */
+  overflow: hidden; /* Prevent scrolling while loading screen is visible */
 }
   </style>
 <!-- end loading -->
