@@ -16,7 +16,100 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
+<!-- loading -->
+    <div id="loading-screen">
+    <div class="loader"></div>
+    <p class="loading-text">Please wait!</p>
+  </div>
+  <script>
+    window.addEventListener('load', function () {
+      var loadingScreen = document.getElementById('loading-screen');
+      var content = document.querySelector('.hidden-content');
+
+      loadingScreen.style.opacity = '0';
+
+      setTimeout(function () {
+        loadingScreen.style.display = 'none';
+        content.style.display = 'block'; 
+        document.body.style.overflow = 'auto'; 
+      }, 500);
+    });
+  </script>
+  <style>
+#loading-screen {
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white; 
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease; 
+}
+
+.loader {
+  height: 3cm;
+  width: 3cm;  
+  border-radius: 1rem;
+  box-shadow: inset 0 0 0 #0a7cbe;
+  animation: load 4s ease infinite;
+}
+
+.loading-text {
+  margin-top: 10px; 
+  font-size: 12px;
+    font-weight: 700; 
+  color: #eb8919;
+}
+
+@keyframes load {
+  0% {
+    box-shadow: inset -3cm -1.5cm 0 #eb8919;
+  }
+
+  25% {
+    box-shadow: inset 3cm -1.5cm 0 #eb8919;
+  }
+
+  25.01% {
+    box-shadow: inset 1.5cm -3cm 0 #eb8919;
+  }
+
+  50% {
+    box-shadow: inset 1.5cm 3cm 0 #eb8919;
+  }
+
+  50.01% {
+    box-shadow: inset 3cm 1.5cm 0 #eb8919; 
+  }
+
+  75% {
+    box-shadow: inset -3cm 1.5cm 0 #eb8919; 
+  }
+
+  75.01% {
+    box-shadow: inset -1.5cm 3cm 0 #eb8919;
+  }
+
+  100% {
+    box-shadow: inset -1.5cm -3cm 0 #eb8919; 
+  }
+}
+
+.hidden-content {
+  display: none;
+}
+
+body {
+  overflow: auto; 
+}
+  </style>
     <nav class="navbar navLink navbar-expand-lg navbar-dark p-md-3 fixed-top" id="myNav">
         <div class="container-fluid" id="navbar">
             <a style="font-weight: 800; font-size: 30px;"
